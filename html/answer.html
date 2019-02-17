@@ -4,19 +4,109 @@
 	<title>answer</title>
 	<link rel="stylesheet" type="text/css" href="../css/answer.css">
 </head>
-<body>	
+<body>
+	<!-- header -->
 	<div class="head">
 		<span>前端答题网站</span>
 	</div>
-	<div class="body" id="body">
-		<div class="question" id="question"><h3>答题须知：答题开始后，每道题你将有十秒钟的时间去思考，若十秒钟后未作答，题目将自动切换</h3></div>
-		<div class="answer" id="A" onclick="Next(A)"><center>点击开始</center></div>
-		<div class="answer" id="B" onclick="Next(B)"><center>点击开始</center></div>
-		<div class="answer" id="C" onclick="Next(C)"><center>点击开始</center></div>
-		<div class="answer" id="D" onclick="Next(D)"><center>点击开始</center></div>
+	<!-- body -->
+	<div  class="body" id="body"><!--显示框-->
+		<div class="box index">
+			<br>本次答题一共有10道题，且每题有且仅有一项正确答案，答对一题得十分，限时两分钟。
+			<input type="button" value="next" class="next" onclick="Next()">
+		</div>
+		<div class="box one" id="one"><!-- 第一个问题 -->
+			<div id="question1"></div>
+			<div class="A" id="oneA"></div>
+			<div class="B" id="oneB"></div>
+			<div class="C" id="oneC"></div>
+			<div class="D" id="oneD"></div>
+			<input type="button" value="next" class="next" onclick="Next()">
+		</div>
+		<div class="box two"><!-- 第二个问题 -->
+			<div id="question2"></div>
+			<div class="A" id="twoA"></div>
+			<div class="B" id="twoB"></div>
+			<div class="C" id="twoC"></div>
+			<div class="D" id="twoD"></div>
+			<input type="button" value="last" class="last" onclick="Last()">
+			<input type="button" value="next" class="next" onclick="Next()">
+		</div>
+		<div class="box three"><!-- 第三个问题 -->
+			<div id="question3"></div>
+			<div class="A" id="threeA"></div>
+			<div class="B" id="threeB"></div>
+			<div class="C" id="threeC"></div>
+			<div class="D" id="threeD"></div>
+			<input type="button" value="last" class="last" onclick="Last()">
+			<input type="button" value="next" class="next" onclick="Next()">
+		</div>
+		<div class="box four"><!-- 第四个问题 -->
+			<div id="question4"></div>
+			<div class="A" id="fourA"></div>
+			<div class="B" id="fourB"></div>
+			<div class="C" id="fourC"></div>
+			<div class="D" id="fourD"></div>
+			<input type="button" value="last" class="last" onclick="Last()">
+			<input type="button" value="next" class="next" onclick="Next()">
+		</div>
+		<div class="box five"><!-- 第五个问题 -->
+			<div id="question5"></div>
+			<div class="A" id="fiveA"></div>
+			<div class="B" id="fiveB"></div>
+			<div class="C" id="fiveC"></div>
+			<div class="D" id="fiveD"></div>
+			<input type="button" value="last" class="last" onclick="Last()">
+			<input type="button" value="next" class="next" onclick="Next()">
+		</div>
+		<div class="box six"><!-- 第六个问题 -->
+			<div id="question6"></div>
+			<div class="A" id="sixA"></div>
+			<div class="B" id="sixB"></div>
+			<div class="C" id="sixC"></div>
+			<div class="D" id="sixD"></div>
+			<input type="button" value="last" class="last" onclick="Last()">
+			<input type="button" value="next" class="next" onclick="Next()">
+		</div>
+		<div class="box seven"><!-- 第七个问题 -->
+			<div id="question7"></div>
+			<div class="A" id="sevenA"></div>
+			<div class="B" id="sevenB"></div>
+			<div class="C" id="sevenC"></div>
+			<div class="D" id="sevenD"></div>
+			<input type="button" value="last" class="last" onclick="Last()">
+			<input type="button" value="next" class="next" onclick="Next()">
+		</div>
+		<div class="box eight"><!-- 第八个问题 -->
+			<div id="question8"></div>
+			<div class="A" id="eightA"></div>
+			<div class="B" id="eightB"></div>
+			<div class="C" id="eightC"></div>
+			<div class="D" id="eightD"></div>
+			<input type="button" value="last" class="last" onclick="Last()">
+			<input type="button" value="next" class="next" onclick="Next()">
+		</div>
+		<div class="box nine"><!-- 第九个问题 -->
+			<div id="question9"></div>
+			<div class="A" id="nineA"></div>
+			<div class="B" id="nineB"></div>
+			<div class="C" id="nineC"></div>
+			<div class="D" id="nineD"></div>
+			<input type="button" value="last" class="last" onclick="Last()">
+			<input type="button" value="next" class="next" onclick="Next()">
+		</div>
+		<div class="box ten"><!-- 第十个问题 -->
+			<div id="question10"></div>
+			<div class="A" id="tenA"></div>
+			<div class="B" id="tenB"></div>
+			<div class="C" id="tenC"></div>
+			<div class="D" id="tenD"></div>
+			<input type="button" value="last" class="last" onclick="Last()">
+		</div>
+	</div>
+	<!-- footer -->
 		<input type="button" class="button" id="again" value="重做" onclick="Again()">
 		<input type="button" class="button" id="sort" value="排行榜">
-	</div>
 	<script type="text/javascript" src="../js/answer.js"></script>
 </body>
 </html>

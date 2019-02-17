@@ -20,56 +20,87 @@ body{
 	color: black;
 	position: relative;
 }
-.body{
-	position: absolute;
-	width: 100%;
-	height: 420px;
-}
-.question{
+#body{
 	position: relative;
-	width: 50%;
-	height: 120px;
-	left: 25%;
+	width: 666px;
+	height: 330px;
+	left: 310px;
+	overflow: hidden;
+	/*background-color: black;*/
+}
+.box{
+	position: absolute;
+	width: 660px;
+	height: 320px;
+	left: 300px;
 	font: 24px monospace;
 	font-weight: 666;
 	color: purple;
 	text-align: left;
 	line-height: 50px;
-	background-color: #CFFDF7;
-	border: 4px solid #7D8FA9;
+	background-color: #CFFDF7;	
+	border: 3px solid #7D8FA9;
 	border-radius: 32px;
 }
-.answer{
-	position: relative;
-	width: 35%;
-	height: 38px;
-	left: 32.5%;
-	border: 3px solid #BCFECE;
-	font-size: 20px;
-	color: blue;
-	line-height: 36px;
-	text-align: left;
-	cursor: pointer;
-	border-radius: 28px;
-}
 br{
-	left: 10px;
+	font: 24px monospace;
+	font-weight: 666;
+	color: pink;
+	line-height: 60px;
 }
-.answer:hover{
+
+.last{
+	position: absolute;
+	background-color: #C1D2E3;
+	width: 66px;
+	height: 33px;
+	left: 15px;
+	bottom: 15px;
+}
+.next{
+	position: absolute;
+	background-color: #C1D2E3;
+	width: 66px;
+	height: 33px;
+	right: 15px;
+	bottom: 15px;
+}
+input{
+	cursor: pointer;
+}
+input:hover{
+	background-color: pink;
+}
+
+.A,.B,.C,.D{
+	position: absolute;
+	width: 420px;
+	height: 38px;
+	left: 110px;
+	border: 3px solid #BCFECE;
+	color: blue;
+	cursor: pointer;
+	font-size: 18px;
+	color: black;
+	border-radius: 8px;
+}
+.A:hover,.B:hover,.C:hover,.D:hover{
 	background-color: #DBF0A5;
 }
-#A{
-	top: 20px;
+.A{
+	top: 100px;
 }
-#B{
-	top: 30px;
+.B{
+	top: 150px;
 }
-#C{
-	top: 40px;
+.C{
+	top: 200px;
 }
-#D{
-	top: 50px;
+.D{
+	top: 250px;
 }
+
+
 .button{
 	position: relative;
 	width: 60px;
@@ -79,6 +110,4 @@ br{
 	font-size: 16px;
 	cursor: pointer;
 }
-.button:hover{
-	background-color: #C1D2E3;
-}
+
