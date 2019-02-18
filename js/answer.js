@@ -1,27 +1,119 @@
-var question = document.getElementById('question');
-var A = document.getElementById('A');
-var B = document.getElementById('B');
-var C = document.getElementById('C');
-var D = document.getElementById('D');
-var again = document.getElementById('again');
-var i = 1;
-var score;
-//
-window.onload = function(){
+var countdown = 120;
+var timer = document.getElementById("counttime");
+    function Count() {
+    	
+		let minutes = Math.floor(countdown/60); //计算出分钟    
+    	let seconds = Math.floor(countdown%60);  //计算出秒   
+    	timer.innerHTML = "距离答题结束还有"+minutes+"分"+seconds+"秒";
+        if (countdown == 0) {
+            alet("时间到");
+        } else {
+            countdown--;
+            setTimeout(function() {
+                Count()
+            },1000)
+        }
+ 		
+    }
+
+
+
+var score = 0;
+var Score = function(){	
+	var A = document.getElementsByClassName('A');
+	for (var i = 0; i < A.length; i++) {
+		(function(i){
+			A[i].onclick = function(){
+				A[i].style.background = "green";
+				if (i == 0 || i == 5 || i == 9){
+					score = score + 10;
+				}
+			}		
+		}(i))	
+	}
+
+	var B = document.getElementsByClassName('B');
+	for (var i = 0; i < B.length; i++) {
+		(function(i){
+			B[i].onclick = function(){
+				B[i].style.background = "green";
+				if (i == 4 || i == 7 || i == 9){
+					score = score + 10;
+				}
+			}		
+		}(i))	
+	}
+	var C = document.getElementsByClassName('C');
+	for (var i = 0; i < C.length; i++) {
+		(function(i){
+			C[i].onclick = function(){
+				C[i].style.background = "green";
+				if (i == 1 || i == 6 || i == 9){
+					score = score + 10;
+				}
+			}		
+		}(i))	
+	}
+	var D = document.getElementsByClassName('D');
+	for (var i = 0; i < D.length; i++) {
+		(function(i){
+			D[i].onclick = function(){
+				D[i].style.background = "green";
+				if (i == 2 || i == 3 || i == 8 || i == 9){
+					score = score + 10;
+				}
+			}		
+		}(i))	
+	}
+	return score;	
+}
+
+//开始答题
+function Start(){
+	Next();
+	Count();
+}
+
+
+//提交
+function Commit(){
+	var scoreall = document.getElementById("scoreall");
+	timer.innerHTML = "答题结束";
+	Next();
+	if (localStorage.clickcount) {
+            localStorage.clickcount = Number(localStorage.clickcount)+1;
+        } else {
+            localStorage.clickcount = 1;
+        }
+        scoreall.innerHTML = "第 " + localStorage.clickcount + " 次答题，你的分数是" + score + "，用时" + "";
+    
+	// Again();
+}
+
+
+//加载页面
+window.onload = Allonload()
+function Allonload(){
+	Onload1();
+	Onload2();
+	Score();
+}
+//加载轮播
+function Onload1(){
 	var arr = document.getElementsByClassName("box");
-	for(var i=0;i<arr.length;i++){
+	for(var i = 0; i < arr.length; i++){
 		arr[i].style.left = i*666+"px";
 	}
 }
 //点击至下一页
-var Next = function(){
+function Next(){
 	var arr = document.getElementsByClassName("box");
 	for(var i=0;i<arr.length;i++){
 		arr[i].style.left = parseInt(arr[i].style.left) - 666 + "px";
 	}
 }
 //点击至上一页
-var Last = function(){
+function Last(){
 	var arr = document.getElementsByClassName("box");
 	for(var i=0;i<arr.length;i++){
 		arr[i].style.left = parseInt(arr[i].style.left) + 666 + "px";
@@ -33,7 +125,7 @@ var Again = function()
    window.location.reload();  
 }
 //加载题目及选项
-window.onclick = function(){
+function Onload2(){
 			var question1 = document.getElementById("question1");
 			var question2 = document.getElementById("question2");
 			var question3 = document.getElementById("question3");

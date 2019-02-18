@@ -5,17 +5,19 @@
 	<link rel="stylesheet" type="text/css" href="../css/answer.css">
 </head>
 <body>
-	<!-- header -->
+	<!-- header --><!-- 
+	<embed src="../music/See You Again.mp3" hidden="true" autostart="true" loop="false"> -->
 	<div class="head">
 		<span>前端答题网站</span>
 	</div>
 	<!-- body -->
+	<div id="counttime"></div>
 	<div  class="body" id="body"><!--显示框-->
 		<div class="box index">
-			<br>本次答题一共有10道题，且每题有且仅有一项正确答案，答对一题得十分，限时两分钟。
-			<input type="button" value="next" class="next" onclick="Next()">
+			<br>本次答题一共有10道题，且每题有且仅有一项正确答案，满分100分，答对一题得十分，点击start开始计时，限时两分钟。
+			<input type="button" value="start" class="next" onclick="Start()">
 		</div>
-		<div class="box one" id="one"><!-- 第一个问题 -->
+		<div class="box one"><!-- 第一个问题 -->
 			<div id="question1"></div>
 			<div class="A" id="oneA"></div>
 			<div class="B" id="oneB"></div>
@@ -102,11 +104,17 @@
 			<div class="C" id="tenC"></div>
 			<div class="D" id="tenD"></div>
 			<input type="button" value="last" class="last" onclick="Last()">
+			<input type="button" value="commit" class="next" onclick="Commit()">
+		</div>
+		<div class="box eleven">
+			<div id="scoreall"></div>
+			<input type="button" value="重做" class="last" onclick="Again()">
+			<input type="button" value="排行榜" class="next" onclick="Next()">
+		</div>
+		<div class="box twelve">
+			<input type="button" value="返回" class="last" onclick="Last()">
 		</div>
 	</div>
-	<!-- footer -->
-		<input type="button" class="button" id="again" value="重做" onclick="Again()">
-		<input type="button" class="button" id="sort" value="排行榜">
 	<script type="text/javascript" src="../js/answer.js"></script>
 </body>
 </html>
