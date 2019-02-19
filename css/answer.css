@@ -22,7 +22,7 @@ body{
 }
 #counttime{
 	position: absolute;
-	left: 520px;
+	left: 540px;
 	top: 140px;
 }
 #body{
@@ -115,3 +115,10 @@ input:hover{
 	cursor: pointer;
 }
 
+.olli{
+	position: relative;
+	background-color: red;
+	left: 88px;
+	top: 10px;
+	width: 500px;
+}

@@ -1,25 +1,39 @@
 var countdown = 120;
+var usetime = 120;
+var handin = document.getElementById("handin");
 var timer = document.getElementById("counttime");
-    function Count() {
-    	
-		let minutes = Math.floor(countdown/60); //计算出分钟    
+
+//倒计时函数
+function Count() { 			
+    if (countdown >= 0 ) {   	
+        let minutes = Math.floor(countdown/60); //计算出分钟    
     	let seconds = Math.floor(countdown%60);  //计算出秒   
     	timer.innerHTML = "距离答题结束还有"+minutes+"分"+seconds+"秒";
-        if (countdown == 0) {
-            alet("时间到");
-        } else {
-            countdown--;
-            setTimeout(function() {
-                Count()
-            },1000)
-        }
+        --countdown;
+     //    if(handin.onclick == true){
+    	// 	usetime = 120 - countdown;
+    	// 	countdown = -1;
+    	// }
+        setTimeout("Count()",100);
+		
+    } 
+    // if (countdown == -1 ) {
+    // 	timer.innerHTML = "时间到，答题结束";
+    // 	var arr = document.getElementsByClassName("box");
+    // 	for (; arr[11].style.left != 666 + "px"; ) {
+    // 		Next();
+    // 	}
+    //	Score();
+    // 	Commit();		 	      
+    // } 
+     return usetime;
  		
-    }
+}
 
-
+// localStorage.setItem(localStorage.clickcount,usetime);
 
 var score = 0;
-var Score = function(){	
+var Score = function(){		
 	var A = document.getElementsByClassName('A');
 	for (var i = 0; i < A.length; i++) {
 		(function(i){
@@ -65,8 +79,11 @@ var Score = function(){
 			}		
 		}(i))	
 	}
-	return score;	
+	
+	return score;
+	
 }
+
 
 //开始答题
 function Start(){
@@ -85,11 +102,15 @@ function Commit(){
         } else {
             localStorage.clickcount = 1;
         }
-        scoreall.innerHTML = "第 " + localStorage.clickcount + " 次答题，你的分数是" + score + "，用时" + "";
-    
+        scoreall.innerHTML = " 本次答题，你的分数是" + score + "，用时" + usetime;
+        localStorage.setItem(localStorage.clickcount,score);
+        localStorage.setItem(score,usetime);
+    // return true;
 	// Again();
 }
-
+    let scores = localStorage.getItem(localStorage.clickcount);
+    let times = localStorage.getItem(score);
+// localStorage.clear();
 
 //加载页面
 window.onload = Allonload()
@@ -124,6 +145,19 @@ var Again = function()
 {  
    window.location.reload();  
 }
+
+//排行榜
+var no1 = document.getElementById("no1");
+var no2 = document.getElementById("no2");
+var no3 = document.getElementById("no3");
+var no4 = document.getElementById("no4");
+var no5 = document.getElementById("no5");
+// sortscore.innerHTML = localStorage.clickcount;
+for (var i = 1; i <= localStorage.clickcount; i++) {
+	
+}
+
+
 //加载题目及选项
 function Onload2(){
 			var question1 = document.getElementById("question1");
