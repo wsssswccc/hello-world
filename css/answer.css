@@ -22,14 +22,15 @@ body{
 }
 #counttime{
 	position: absolute;
-	left: 540px;
-	top: 140px;
+	font-size: 18px;
+	left: 550px;
+	top: 150px;
 }
 #body{
 	position: relative;
 	width: 666px;
 	height: 330px;
-	left: 310px;
+	left: 320px;
 	overflow: hidden;
 	/*background-color: black;*/
 }
@@ -117,8 +118,8 @@ input:hover{
 
 .olli{
 	position: relative;
-	background-color: red;
-	left: 88px;
+	/*background-color: red;*/
+	left: 220px;
 	top: 10px;
-	width: 500px;
+	width: 400px;
 }
